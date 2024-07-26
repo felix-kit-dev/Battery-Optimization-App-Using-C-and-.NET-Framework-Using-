@@ -1,34 +1,62 @@
 # Battery-Optimization-App-Using-C-and-.NET-Framework
 
-To create a Windows application that optimizes battery usage, monitors charging progress, and handles notifications, you can use C# and the .NET framework. This example will use Windows Presentation Foundation (WPF) for the UI and the Windows API to interact with battery information and control power settings.
+# Battery Optimizer
 
-Here's a simplified version of the app:
+A Windows application that monitors battery status, provides notifications, and offers power management features. The app displays battery charging progress, remaining charge, and an option to cut power once the battery is fully charged.
 
-Create a new WPF Application project in Visual Studio.
-Install the Hardcodet.NotifyIcon.Wpf package for notifications.
+## Requirements
 
+- **Operating System**: Windows 10 or Windows 11
+- **.NET Framework**: .NET Core 3.1 or .NET 5.0/6.0
+- **IDE**: Visual Studio 2019 or later
+- **NuGet Packages**:
+  - `Hardcodet.NotifyIcon.Wpf` for system tray notifications
 
-**Steps to Run the Application**
+## Features
 
-Create a new WPF Project:
+- Displays battery charging progress as a progress bar.
+- Shows the remaining battery charge as a percentage.
+- Provides notifications when the battery is low or fully charged.
+- Includes an option to cut power when the battery is fully charged.
+- Refresh button to manually update battery status.
+- Exit button to close the application.
 
-Open Visual Studio.
-Go to File -> New -> Project.
-Select "WPF App (.NET Core)" and name it BatteryOptimizer.
-Install NuGet Package:
+## How to Build
 
-Right-click on your project in Solution Explorer and select "Manage NuGet Packages".
-Search for Hardcodet.NotifyIcon.Wpf and install it.
-Add XAML and Code:
+1. **Clone the Repository**
 
-Replace the content of MainWindow.xaml and MainWindow.xaml.cs with the code provided above.
-Run the Application:
+   ```sh
+   git clone https://github.com/yourusername/battery-optimizer.git
 
-Build and run your project by pressing F5.
-Explanation
-The application uses a DispatcherTimer to periodically update the battery status.
-The UpdateBatteryStatus method retrieves battery information and updates the UI.
-The ShowNotification method displays notifications for low battery and full charge.
-The CutPower method uses the Windows API to prevent the system from entering sleep mode when the battery is full.
-Note
-The code uses SetThreadExecutionState to manage the power settings, but actual hardware-specific power control might require additional configurations or administrative privileges which are beyond the scope of this example.
+Open the Project
+
+Open the solution file (BatteryOptimizer.sln) in Visual Studio.
+
+Install NuGet Packages
+
+Right-click on the project in Solution Explorer and select "Manage NuGet Packages". Search for Hardcodet.NotifyIcon.Wpf and install it.
+
+Build the Project
+
+Build the project by selecting Build -> Build Solution from the top menu or by pressing Ctrl+Shift+B.
+
+How to Run
+Start the Application
+
+Press F5 or select Debug -> Start Debugging from the top menu to run the application.
+
+Using the Application
+
+The application will show the battery status in the main window.
+Use the "Refresh" button to manually update the battery status.
+Check the "Cut Power When Fully Charged" checkbox to enable automatic power cut when the battery is fully charged.
+Notifications will appear when the battery is low or fully charged.
+Use the "Exit" button to close the application.
+Known Issues
+The power cut feature may not work on all hardware configurations or may require administrative privileges.
+Ensure the application has necessary permissions to access battery information and notifications.
+Contributing
+Feel free to submit issues and pull requests. Please ensure that your changes are well-documented and tested.
+
+License
+This project is licensed under the GNU License. See the LICENSE file for details.
